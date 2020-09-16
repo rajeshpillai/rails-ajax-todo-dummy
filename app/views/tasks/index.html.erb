@@ -2,7 +2,12 @@
 
 <h1>Tasks</h1>
 
-<%= link_to 'New Task', new_task_path %>
+
+<div class="task-form">
+  <%= render 'form', task: @task %>
+</div>
+
+<br>
 
 <table>
   <thead>
@@ -14,19 +19,11 @@
     </tr>
   </thead>
 
-  <tbody>
+  <tbody id="task-items">
     <% @tasks.each do |task| %>
-      <tr>
-        <td><%= task.title %></td>
-        <td><%= task.completed %></td>
-        <td><%= task.position %></td>
-        <td><%= link_to 'Show', task %></td>
-        <td><%= link_to 'Edit', edit_task_path(task) %></td>
-        <td><%= link_to 'Destroy', task, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
+     <%= render task%>
     <% end %>
   </tbody>
 </table>
 
-<br>
 
