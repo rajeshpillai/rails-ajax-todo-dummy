@@ -1,7 +1,9 @@
-document.querySelector("#task-items")
+document.querySelector("#task_items")
         .insertAdjacentHTML("afterbegin", 
         "<%= j render "task", task: @task %>"
 );
 
 document.querySelector("#task_title").value = "";
 document.querySelector("#task_position").value = "<%= Task.all.size %>";
+
+toastr.success("Task created!");
