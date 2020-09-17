@@ -1,0 +1,4 @@
+toastr.success("Yes, you can edit with javascript!")
+
+document.querySelector(".task-form")
+        .innerHTML = "<%= j render "form", task: @task   %>";

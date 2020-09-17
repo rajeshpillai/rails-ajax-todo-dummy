@@ -26,7 +26,9 @@ import '../stylesheets/application'
 
 
 $(document).on('turbolinks:load', function() {
+  // Here you can do any DOM manipulation
   toastr.info("Welcome!");
+
 });
 
 

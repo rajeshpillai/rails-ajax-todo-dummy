@@ -14,14 +14,9 @@ class TasksController < ApplicationController
   def show
   end
 
-  # GET /tasks/new
-  def new
-    @task = Task.new
-    @task.position = Task.all.size + 1
-  end
-
   # GET /tasks/1/edit
   def edit
+      # Based on format , the view will be rendered.
   end
 
   # POST /tasks
@@ -46,6 +41,7 @@ class TasksController < ApplicationController
   def update
     respond_to do |format|
       if @task.update(task_params)
+        format.js  { render :show }
         format.html { redirect_to @task, notice: 'Task was successfully updated.' }
         format.json { render :show, status: :ok, location: @task }
       else
